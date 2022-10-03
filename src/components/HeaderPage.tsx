@@ -1,11 +1,11 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Platform, SafeAreaView } from 'react-native';
 
 const HeaderPage = () =>{
     return (
-        <View style = {styles.wrapper}>
+        <SafeAreaView style = {styles.wrapper}>
               <Text style = {styles.textStyle}>This is Header.</Text>
-        </View>
+        </SafeAreaView>
     )
 }
 
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     wrapper: {
         backgroundColor: '#000000',
         padding: 10,
-        paddingTop: 30,
+        paddingTop: Platform.OS == 'android' ? 30 : 20,
 
     },
 
