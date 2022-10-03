@@ -3,8 +3,8 @@ import { Text, View, StyleSheet } from 'react-native';
 
 const WelcomePage = () =>{
     return (
-        <View style = {{...styles.wrapper, ...styles.textStyle}}>
-            <Text>This is Welcome Page. Add Page Text.</Text>
+        <View style = {styles.wrapper}>
+            <Text style = {styles.textStyle}>This is Welcome Page. Add Page Text.</Text>
         </View>
     )
 }
@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
     },
 
     textStyle: {
-        marginLeft: 10,
         color: '#00796B',
         textAlign: 'center'
     }
