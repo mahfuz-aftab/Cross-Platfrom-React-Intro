@@ -1,9 +1,23 @@
 import React from 'react';
-import { Text, View, StyleSheet, Image, Button, TouchableOpacity, ProgressBarAndroidComponent } from 'react-native';
+import { Text, View, StyleSheet, Image, Button, TouchableOpacity, ProgressBarAndroidComponent, Alert } from 'react-native';
 
 function TouchableOpacityFunc(){
     console.log('Touchable Opacity Button');
-}
+    Alert.alert(
+      "Alert Title", "My Alert Msg",
+      [
+        {
+          text: "Ask me later",
+          onPress: () => console.log("Ask me later pressed")
+        },
+        {
+          text: "Cancel",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel"
+        },
+        { text: "OK", onPress: () => console.log("OK Pressed")}
+      ]
+    );}
 
 const WelcomePage = () => {
     const { wrapper, textStyle, textBtnStyle, iconStyle } = styles
@@ -26,7 +40,7 @@ const WelcomePage = () => {
             <Button title='Button' onPress={() => { console.log('Buttom Component') }}></Button>
 
             <TouchableOpacity onPress={TouchableOpacityFunc}>
-                <Text>Custom Button (Custom as Like)</Text>
+                <Text>Custom Complex Button</Text>
                 <Image style = {iconStyle} source={require('./../../assets/favicon.png')}/>
             </TouchableOpacity>
         </View>
